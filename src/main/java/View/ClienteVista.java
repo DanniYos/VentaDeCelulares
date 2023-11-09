@@ -13,12 +13,12 @@ import java.math.BigInteger;
  *
  * @author wilia
  */
-public class ClienteView extends javax.swing.JFrame {
+public class ClienteVista extends javax.swing.JFrame {
 
     /**
      * Creates new form Cliente
      */
-    public ClienteView() {
+    public ClienteVista() {
         initComponents();
     }
 
@@ -219,6 +219,8 @@ public class ClienteView extends javax.swing.JFrame {
         llenarDatosCliente();
     }//GEN-LAST:event_campoDPIFocusLost
 
+
+
     /**
      * @param args the command line arguments
      */
@@ -236,20 +238,20 @@ public class ClienteView extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ClienteView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ClienteVista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ClienteView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ClienteVista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ClienteView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ClienteVista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ClienteView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ClienteVista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ClienteView().setVisible(true);
+                new ClienteVista().setVisible(true);
             }
         });
     }
@@ -294,6 +296,14 @@ public class ClienteView extends javax.swing.JFrame {
        if (cliente == null){
            registrarCliente();
        }
+    }
+
+    private void limpiarFormulario(){
+        campoNombres.setText("");
+        campoApellidos.setText("");
+        campoNIT.setText("");
+        campoDireccion.setText("");
+        campoTelefono.setText("");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
