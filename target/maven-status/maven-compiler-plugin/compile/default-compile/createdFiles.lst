@@ -29,6 +29,7 @@ View\Venta$1.class
 View\IngresoCelular$8.class
 View\InventarioLotes.class
 View\IngresoCelular.class
+View\Cliente.class
 View\InventarioCelulares$1.class
 View\InventarioCelulares$4.class
 View\Login$3.class
@@ -39,6 +40,7 @@ View\IngresoCelular$6.class
 View\IngresoCelular$17.class
 View\InventarioLotes$1.class
 View\IngresoCelular$2.class
+View\Cliente$1.class
 View\InventarioCelulares$3.class
 View\IngresoCelular$10.class
 View\IngresoCelular$9.class

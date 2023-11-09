@@ -7,6 +7,7 @@ package View;
 import Controller.CarroVenta;
 import jdk.jfr.Event;
 import tools.Pantalla;
+import tools.Tabla;
 
 import javax.swing.*;
 import java.awt.*;
@@ -33,11 +34,13 @@ public class Venta extends javax.swing.JFrame {
     
     public Venta() {
         initComponents();
+        Tabla tabla = new Tabla();
         Font font = new Font("Arial", Font.BOLD, 15);
         iconoMenu.setImageToLabel(iconoCelular, "src/main/java/imagenes/iconoSmartphone.png");
         iconoMenu.setImageToLabel(iconoRecarga, "src/main/java/imagenes/iconoRecarga.png");
         icono.setImageToLabel(botonAtras,"src/main/java/imagenes/iconoAtras.png");
         tablaListaProductos.getTableHeader().setFont(font);
+        tabla.enter(tablaListaProductos);
     }
 
     public JTable getTablaListaProductos() {
@@ -361,7 +364,7 @@ public class Venta extends javax.swing.JFrame {
     }//GEN-LAST:event_inventarioRecargaMouseClicked
 
     private void tablaListaProductosKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tablaListaProductosKeyReleased
-        CarroVenta cv = new CarroVenta();
+        CarroVenta cv = CarroVenta.getInstance();
         if(evt.getKeyCode() == KeyEvent.VK_DELETE){
             cv.eliminarProducto();
             cv.sumarTotal();

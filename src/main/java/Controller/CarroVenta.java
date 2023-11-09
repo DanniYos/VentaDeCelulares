@@ -92,11 +92,13 @@ public class CarroVenta {
         List<String> lista = cv.getListaDeProductos();
         JTable invLotes = InventarioLotes.getInstance().getTablaInventarioCelularesLotes();
         //Fila y columna de la tabla ventas
-        int fila = venta.getTablaListaProductos().getSelectedRow();
+        int filaSeleccionada = venta.getTablaListaProductos().getSelectedRow();
         int columna = 1;
-        String identificadorItem = (String) model.getValueAt(fila, columna);
-        cv.listaDeProductos.remove(identificadorItem);
-        model.removeRow(fila);
+        if (filaSeleccionada >= 0) {
+            String identificadorItem = (String) model.getValueAt(filaSeleccionada, columna);
+            cv.listaDeProductos.remove(identificadorItem);
+            model.removeRow(filaSeleccionada);
+        }
     }
 
 }
