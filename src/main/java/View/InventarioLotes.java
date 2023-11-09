@@ -30,8 +30,7 @@ public class InventarioLotes extends javax.swing.JFrame {
     public InventarioLotes() {
         initComponents();
         Tabla tb = Tabla.getInstance();
-        tb.enter(tablaInventarioCelularesLotes);
-        tablaInventarioCelularesLotes.getInputMap(JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT).put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), "none");
+        tb.enter(this.tablaInventarioCelularesLotes);
     }
 
     /**
@@ -64,7 +63,7 @@ public class InventarioLotes extends javax.swing.JFrame {
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                true, false, false, false, false, false
+                false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {

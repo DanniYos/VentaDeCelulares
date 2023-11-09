@@ -11,10 +11,7 @@ public class Main {
 
     public static void main(String[] args) {
         Login login = new Login();
-        Cliente cliente = new Cliente();
         Pantalla pantalla = Pantalla.getInstance();
         pantalla.abrirPantalla(login, 1100, 700);
-
-
     }
 }
