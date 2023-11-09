@@ -8,6 +8,7 @@
         <class>Model.Saldo</class>
         <class>Model.Mensajes</class>
         <class>Model.Internet</class>
+        <class>Model.Cliente</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>
             <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/venta_celulares?serverTimezone=America/Guatemala"/>
