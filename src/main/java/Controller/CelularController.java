@@ -6,6 +6,7 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.NoResultException;
 import util.JpaUtil;
 
+import javax.swing.*;
 import java.util.List;
 
 public class CelularController {
@@ -32,6 +33,9 @@ public class CelularController {
                     "FROM Celular c INNER JOIN Plan p ON c.plan = p WHERE c.disponible = true " +
                     "AND c.marca LIKE :filtroMarca " +
                     "GROUP BY c.codigoBarra ", Object[].class).setParameter("filtroMarca", "%" + filtroMarca + "%").getResultList();
+            if (celulares.isEmpty()){
+                JOptionPane.showMessageDialog(null, "No se encontraron resulados");
+            }
             return celulares;
         }catch (NoResultException e){
             return null;

@@ -100,5 +100,4 @@ public class CarroVenta {
             model.removeRow(filaSeleccionada);
         }
     }
-
 }

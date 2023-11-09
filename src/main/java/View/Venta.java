@@ -34,7 +34,7 @@ public class Venta extends javax.swing.JFrame {
     
     public Venta() {
         initComponents();
-        Tabla tabla = new Tabla();
+        Tabla tabla = Tabla.getInstance();
         Font font = new Font("Arial", Font.BOLD, 15);
         iconoMenu.setImageToLabel(iconoCelular, "src/main/java/imagenes/iconoSmartphone.png");
         iconoMenu.setImageToLabel(iconoRecarga, "src/main/java/imagenes/iconoRecarga.png");
@@ -237,7 +237,7 @@ public class Venta extends javax.swing.JFrame {
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, true, false, false, false
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
