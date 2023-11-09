@@ -4,6 +4,11 @@
  */
 package View;
 
+import Controller.ClienteController;
+import Model.Cliente;
+
+import java.math.BigInteger;
+
 /**
  *
  * @author wilia
@@ -207,11 +212,11 @@ public class ClienteView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAgregarMouseClicked
-      
+        validarRegistro();
     }//GEN-LAST:event_botonAgregarMouseClicked
 
     private void campoDPIFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campoDPIFocusLost
-        // TODO add your handling code here:
+        llenarDatosCliente();
     }//GEN-LAST:event_campoDPIFocusLost
 
     /**
@@ -247,6 +252,48 @@ public class ClienteView extends javax.swing.JFrame {
                 new ClienteView().setVisible(true);
             }
         });
+    }
+
+    private void registrarCliente(){
+        ClienteController cl = new ClienteController();
+        String stringDPI = campoDPI.getText();
+        BigInteger dpi = new BigInteger(stringDPI);
+        String nombre = campoNombres.getText();
+        String apellidos = campoApellidos.getText();
+        String nit = campoNIT.getText();
+        String telefono = campoTelefono.getText();
+        String direccion = campoDireccion.getText();
+        Cliente cliente = new Cliente(dpi, nombre, apellidos, nit, telefono, direccion);
+        cl.guardarCliente(cliente);
+    }
+
+    private void llenarDatosCliente(){
+        ClienteController clienteController = new ClienteController();
+        String stringDpi= campoDPI.getText();
+        BigInteger dpi = new BigInteger(stringDpi);
+        Cliente cliente = clienteController.buscarCliente(dpi);
+        if (cliente != null) {
+            campoNombres.setText(cliente.getNombre());
+            campoApellidos.setText(cliente.getApellido());
+            campoNIT.setText(cliente.getNit());
+            campoTelefono.setText(cliente.getTelefono());
+            campoDireccion.setText(cliente.getDireccion());
+            campoNombres.setEditable(false);
+            campoApellidos.setEditable(false);
+            campoTelefono.setEditable(false);
+            campoNIT.setEditable(false);
+            campoDireccion.setEditable(false);
+        }
+    }
+
+    private void validarRegistro (){
+       ClienteController clienteController = new ClienteController();
+       String stringDPI = campoDPI.getText();
+       BigInteger dpi = new BigInteger(stringDPI);
+       Cliente cliente = clienteController.buscarCliente(dpi);
+       if (cliente == null){
+           registrarCliente();
+       }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

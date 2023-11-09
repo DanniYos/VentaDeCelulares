@@ -5,18 +5,20 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+import java.math.BigInteger;
+
 @Entity
-@Table
+@Table(name = "CLIENTES")
 public class Cliente {
 
         @Id
         @Column(name = "DPI")
-        private String dpi;
+        private BigInteger dpi;
 
         @Column(name = "NOMBRE")
         private String nombre;
 
-        @Column(name = "APELLIDO")
+        @Column(name = "APELLIDOS")
         private String apellido;
 
         @Column(name = "NIT")
@@ -33,7 +35,7 @@ public class Cliente {
 
         }
 
-        public Cliente(String dpi, String nombre, String apellido, String nit, String telefono, String direccion) {
+        public Cliente(BigInteger dpi, String nombre, String apellido, String nit, String telefono, String direccion) {
             this.dpi = dpi;
             this.nombre = nombre;
             this.apellido = apellido;
@@ -42,11 +44,11 @@ public class Cliente {
             this.direccion = direccion;
         }
 
-        public String getDpi() {
+        public BigInteger getDpi() {
                 return dpi;
             }
 
-        public void setDpi(String dpi) {
+        public void setDpi(BigInteger dpi) {
             this.dpi = dpi;
         }
 
@@ -89,4 +91,16 @@ public class Cliente {
         public void setDireccion(String direccion) {
             this.direccion = direccion;
         }
+
+    @Override
+    public String toString() {
+        return "Cliente{" +
+                "dpi=" + dpi +
+                ", nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", nit='" + nit + '\'' +
+                ", telefono='" + telefono + '\'' +
+                ", direccion='" + direccion + '\'' +
+                '}';
+    }
 }
