@@ -6,7 +6,9 @@ View\IngresoCelular$18.class
 View\IngresoCelular$11.class
 View\IngresoCelular$3.class
 View\IngresoCelular$21.class
+View\Venta$10.class
 View\MenuPrincipal$2.class
+View\Venta$9.class
 View\Login$2.class
 View\IconoMenu.class
 View\Venta$2.class
@@ -14,6 +16,7 @@ View\IngresoCelular$19.class
 View\MenuPrincipal$1.class
 View\InventarioLotes$2.class
 View\Icono.class
+View\Venta$11.class
 View\IngresoCelular$1.class
 View\IngresoCelular$7.class
 View\IngresoCelular$20.class
@@ -33,6 +36,7 @@ View\InventarioCelulares$1.class
 View\InventarioCelulares$4.class
 View\Login$3.class
 View\IngresoCelular$16.class
+View\Venta$8.class
 View\IngresoCelular$14.class
 View\MenuPrincipal$3.class
 View\IngresoCelular$6.class

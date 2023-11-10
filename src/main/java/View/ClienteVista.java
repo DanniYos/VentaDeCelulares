@@ -7,6 +7,7 @@ package View;
 import Controller.ClienteController;
 import Model.Cliente;
 
+import javax.swing.*;
 import java.math.BigInteger;
 
 /**
@@ -20,6 +21,12 @@ public class ClienteVista extends javax.swing.JFrame {
      */
     public ClienteVista() {
         initComponents();
+    }
+
+    private static final ClienteVista clienteVista = new ClienteVista();
+
+    public static ClienteVista getInstance(){
+        return clienteVista;
     }
 
     /**
@@ -51,77 +58,94 @@ public class ClienteVista extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("DATOS DEL CLIENTE");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 18, 704, 39));
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("DPI");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 90, 110, -1));
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("APELLIDOS");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 208, 132, -1));
 
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("NIT");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 258, 110, 38));
 
         jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("TELEFONO");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 323, 110, 39));
 
         jLabel6.setBackground(new java.awt.Color(255, 255, 255));
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("DIRECCION");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 380, 110, 41));
 
         jLabel7.setBackground(new java.awt.Color(255, 255, 255));
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("NOMBRES");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 145, 110, -1));
 
         campoTelefono.setBackground(new java.awt.Color(255, 255, 255));
         campoTelefono.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         campoTelefono.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(campoTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 320, 374, 39));
 
         campoDPI.setBackground(new java.awt.Color(255, 255, 255));
         campoDPI.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         campoDPI.setForeground(new java.awt.Color(0, 0, 0));
         campoDPI.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                campoDPIFocusGained(evt);
+            }
             public void focusLost(java.awt.event.FocusEvent evt) {
                 campoDPIFocusLost(evt);
             }
         });
+        jPanel1.add(campoDPI, new org.netbeans.lib.awtextra.AbsoluteConstraints(198, 84, 374, 38));
 
         campoNIT.setBackground(new java.awt.Color(255, 255, 255));
         campoNIT.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         campoNIT.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(campoNIT, new org.netbeans.lib.awtextra.AbsoluteConstraints(198, 259, 374, 38));
 
         campoNombres.setBackground(new java.awt.Color(255, 255, 255));
         campoNombres.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         campoNombres.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(campoNombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(198, 139, 374, 38));
 
         campoApellidos.setBackground(new java.awt.Color(255, 255, 255));
         campoApellidos.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         campoApellidos.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(campoApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(198, 202, 374, 38));
 
         campoDireccion.setBackground(new java.awt.Color(255, 255, 255));
         campoDireccion.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         campoDireccion.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(campoDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 380, 374, 39));
 
         botonAgregar.setBackground(new java.awt.Color(255, 255, 255));
         botonAgregar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -133,79 +157,17 @@ public class ClienteVista extends javax.swing.JFrame {
                 botonAgregarMouseClicked(evt);
             }
         });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(82, 82, 82)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
-                        .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(campoDPI, javax.swing.GroupLayout.DEFAULT_SIZE, 374, Short.MAX_VALUE)
-                    .addComponent(campoNombres)
-                    .addComponent(campoApellidos)
-                    .addComponent(campoNIT)
-                    .addComponent(campoTelefono)
-                    .addComponent(campoDireccion))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 291, Short.MAX_VALUE)
-                .addComponent(botonAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(215, 215, 215))
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
-                .addGap(28, 28, 28)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(campoDPI, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(campoNombres, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE))
-                .addGap(26, 26, 26)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(campoApellidos, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(campoNIT, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(campoTelefono, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(campoDireccion, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(31, 31, 31)
-                .addComponent(botonAgregar, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
-                .addGap(27, 27, 27))
-        );
+        jPanel1.add(botonAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 450, 179, 38));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 668, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 530, Short.MAX_VALUE)
         );
 
         pack();
@@ -213,11 +175,25 @@ public class ClienteVista extends javax.swing.JFrame {
 
     private void botonAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAgregarMouseClicked
         validarRegistro();
+        Venta venta = Venta.getInstance();
+        venta.getCampoDPI().setText(campoDPI.getText());
+        venta.getCampoNombre().setText(campoNombres.getText());
+        venta.getCampoNIT().setText(campoNIT.getText());
+        this.dispose();
     }//GEN-LAST:event_botonAgregarMouseClicked
 
     private void campoDPIFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campoDPIFocusLost
-        llenarDatosCliente();
+        if (!campoDPI.getText().isBlank()){
+            llenarDatosCliente();
+        }
     }//GEN-LAST:event_campoDPIFocusLost
+
+    private void campoDPIFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_campoDPIFocusGained
+        campoDPI.setText("");
+        if(campoDPI.getText().isBlank()){
+            limpiarFormulario();
+        }
+    }//GEN-LAST:event_campoDPIFocusGained
 
 
 
@@ -285,6 +261,12 @@ public class ClienteVista extends javax.swing.JFrame {
             campoTelefono.setEditable(false);
             campoNIT.setEditable(false);
             campoDireccion.setEditable(false);
+        }else {
+            campoNombres.setEditable(true);
+            campoApellidos.setEditable(true);
+            campoTelefono.setEditable(true);
+            campoNIT.setEditable(true);
+            campoDireccion.setEditable(true);
         }
     }
 

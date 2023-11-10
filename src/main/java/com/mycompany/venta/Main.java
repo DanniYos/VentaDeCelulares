@@ -3,6 +3,7 @@
  */
 
 package com.mycompany.venta;
+import View.ClienteVista;
 import View.Login;
 import tools.Pantalla;
 
@@ -12,6 +13,5 @@ public class Main {
         Login login = new Login();
         Pantalla pantalla = Pantalla.getInstance();
         pantalla.abrirPantalla(login, 1100, 700);
-        
     }
 }
