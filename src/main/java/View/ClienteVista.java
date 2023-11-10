@@ -177,7 +177,8 @@ public class ClienteVista extends javax.swing.JFrame {
         validarRegistro();
         Venta venta = Venta.getInstance();
         venta.getCampoDPI().setText(campoDPI.getText());
-        venta.getCampoNombre().setText(campoNombres.getText());
+        String nombreApellido = campoNombres.getText().concat(" ".concat(campoApellidos.getText()));
+        venta.getCampoNombre().setText(nombreApellido);
         venta.getCampoNIT().setText(campoNIT.getText());
         this.dispose();
     }//GEN-LAST:event_botonAgregarMouseClicked
