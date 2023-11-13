@@ -3,7 +3,6 @@
  */
 
 package com.mycompany.venta;
-import View.ClienteVista;
 import View.Login;
 import tools.Pantalla;
 
