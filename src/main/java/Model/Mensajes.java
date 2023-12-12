@@ -8,7 +8,7 @@ import jakarta.persistence.Table;
 import java.util.List;
 
 @Entity
-@Table(name = "Mensajes")
+@Table(name = "mensajes")
 public class Mensajes extends Recarga{
 
     @Id

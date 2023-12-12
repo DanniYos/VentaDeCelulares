@@ -1,5 +1,5 @@
-CREATE DATABASE VENTA_CELULARES;
-USE VENTA_CELULARES;
+CREATE DATABASE venta_celulares;
+USE venta_celulares;
 
 CREATE TABLE planes(
     ID_PLAN INT AUTO_INCREMENT NOT NULL,
@@ -9,7 +9,7 @@ CREATE TABLE planes(
     PRIMARY KEY (id_plan)
 )ENGINE=InnoDB;
 
-CREATE TABLE Saldo(
+CREATE TABLE saldo(
     ID_SALDO INT AUTO_INCREMENT NOT NULL,
     Plan VARCHAR(50),
     PRECIO float NOT NULL,
@@ -17,7 +17,7 @@ CREATE TABLE Saldo(
     PRIMARY KEY (ID_SALDO)
 )ENGINE=InnoDB;
 
-CREATE TABLE Mensajes(
+CREATE TABLE mensajes(
     ID_MENSAJES INT AUTO_INCREMENT NOT NULL,
     Plan VARCHAR(50),
     PRECIO float NOT NULL,
@@ -25,7 +25,7 @@ CREATE TABLE Mensajes(
     PRIMARY KEY (ID_MENSAJES)
 )ENGINE=InnoDB;
 
-CREATE TABLE Internet(
+CREATE TABLE internet(
     ID_INTERNET INT AUTO_INCREMENT NOT NULL,
     Plan VARCHAR(50),
     PRECIO float NOT NULL,
@@ -81,9 +81,9 @@ CREATE TABLE detalle_facturas(
     PRIMARY KEY(ID_DETALLE),
     CONSTRAINT FOREIGN KEY(ID_FACTURA) REFERENCES facturas(ID_FACTURA),
     CONSTRAINT FOREIGN KEY (IMEI) REFERENCES celulares(IMEI),
-    CONSTRAINT FOREIGN KEY (ID_SALDO) REFERENCES Saldo(ID_SALDO),
-    CONSTRAINT FOREIGN KEY (ID_MENSAJES) REFERENCES Mensajes(ID_MENSAJES),
-    CONSTRAINT FOREIGN KEY (ID_INTERNET) REFERENCES Internet(ID_INTERNET)
+    CONSTRAINT FOREIGN KEY (ID_SALDO) REFERENCES saldo(ID_SALDO),
+    CONSTRAINT FOREIGN KEY (ID_MENSAJES) REFERENCES mensajes(ID_MENSAJES),
+    CONSTRAINT FOREIGN KEY (ID_INTERNET) REFERENCES internet(ID_INTERNET)
 )ENGINE=InnoDB;
 
 USE venta_celulares;
@@ -92,14 +92,14 @@ INSERT INTO planes VALUES (DEFAULT,'PREPAGO', 'Minutos', '0.05');
 INSERT INTO planes VALUES (DEFAULT,'POSTPAGO', 'Minutos', '0.02');
 
 /*Recargas*/
-INSERT INTO Saldo VALUES (default, 'Primium', 5, 'Saldo');
-INSERT INTO Saldo VALUES (default, 'Silver', 25, 'Saldo');
-INSERT INTO Saldo VALUES (default, 'Gold', 100, 'Saldo');
+INSERT INTO saldo VALUES (default, 'Primium', 5, 'Saldo');
+INSERT INTO saldo VALUES (default, 'Silver', 25, 'Saldo');
+INSERT INTO saldo VALUES (default, 'Gold', 100, 'Saldo');
 
-INSERT INTO Mensajes VALUES (default, 'Premium', 5, 'Mensajes');
-INSERT INTO Mensajes VALUES (default, 'Silver', 25, 'Mensajes');
-INSERT INTO Mensajes VALUES (default, 'Gold', 100, 'Mensajes');
+INSERT INTO mensajes VALUES (default, 'Premium', 5, 'Mensajes');
+INSERT INTO mensajes VALUES (default, 'Silver', 25, 'Mensajes');
+INSERT INTO mensajes VALUES (default, 'Gold', 100, 'Mensajes');
 
-INSERT INTO Internet VALUES (default, 'Premium', 5, 'Internet');
-INSERT INTO Internet VALUES (default, 'Silver', 25, 'Internet');
-INSERT INTO Internet VALUES (default, 'Gold', 100, 'Internet');
+INSERT INTO internet VALUES (default, 'Premium', 5, 'Internet');
+INSERT INTO internet VALUES (default, 'Silver', 25, 'Internet');
+INSERT INTO internet VALUES (default, 'Gold', 100, 'Internet');

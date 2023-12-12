@@ -8,7 +8,7 @@ import jakarta.persistence.Table;
 import java.math.BigInteger;
 
 @Entity
-@Table(name = "CLIENTES")
+@Table(name = "clientes")
 public class Cliente {
 
         @Id

@@ -210,7 +210,7 @@ public class Recargas extends javax.swing.JFrame {
         model.setRowCount(0);
         if (filtro.toUpperCase().equals("SALDO")){
             SaldoController sl = new SaldoController();
-             recargas=  sl.listarRecargas();
+            recargas =  sl.listarRecargas();
             for (Object[] recarga : recargas){
                 Integer id = (Integer) recarga[0];
                 String plan = (String) recarga[1];
